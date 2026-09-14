@@ -1,0 +1,85 @@
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* borderbox itu biar ukurannya tetap sama kaya diawal */
+} 
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* aku ngurus lebar website setip container*/
+.container {
+    max-width: 1200px;
+    /* membatasi ukurannya hanya 1200px sekalipun dimonitor yg lebih gede sisanya diatur margin auto */
+    margin: 0 auto;
+    /* atasbawah 0 kanankiri auto-biar browser ngitung sendiri sisa ruangnya jadi container tepat ditengah */
+    padding: 0 20px;
+    /* 20px brati kanan kirinya ada jarak aman dari tepi terutama di layar kecil */
+}
+
+/* aku ngurus isi hero alias container yg ada didalam hero */
+.hero .container {
+    /* biar sejajar secara horizontal*/
+    display: flex;
+    /* kasih jarak antar anak*/
+    gap: 60px;
+    /* sejajarkan anak ditengah */
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    min-height: 400px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.cta-buttons a {
+    /* tetap sebaris tapi bisa aatur ukuran padding */
+    display: inline-block;
+    /* atasbawah12 kirikanan24 */
+    padding: 12px 24px;
+    /* backgroun tombolnya */
+    background-color: cornflowerblue;
+    /* warna textnya */
+    color: white;
+    /* hilangin underline */
+    text-decoration: none;
+    /* bikin sudut tombol melengkung */
+    border-radius: 8px;
+    /* ini waktu perubahan warnya biar smooth */
+    transition: 0.3s;
+}
+
+/* kondisi kursor ada diatas tombol akan berubah warna */
+.cta-buttons a:hover {
+    background-color: #4722be;
+    /* tombol naik 3 pixel keatas 
+    misal translateY(3px) berati turun 3pixel
+    traslateX(2px) berati geser kanan 2px */
+    transform: translateY(-3px);
+    /* bayangan dibelakang elemen */
+    /* 0 posisi x ngga digeser kekikri/kanan,
+       5 posisi y digeser kebawah 5px,
+       12[x seberapa blur bayanganya,
+       rgba itu warna bayangannya 0.2 itu transparasinya
+     */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
