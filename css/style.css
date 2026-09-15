@@ -98,3 +98,27 @@ body {
     /* foto mau digeser kemana didalam frame */
     object-position: center;
 }
+
+/* kalo lebar layar maxnya 768px pake aturan iniya */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+      font-size: 16px;  
+    }
+
+    .cta-buttons {
+        margin-top: 20px;
+    }
+}
