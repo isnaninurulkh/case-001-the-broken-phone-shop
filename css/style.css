@@ -12,6 +12,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: whitesmoke;
 }
 
 /* aku ngurus lebar website setip container*/
@@ -32,6 +33,7 @@ body {
     gap: 60px;
     /* sejajarkan anak ditengah */
     align-items: center;
+    padding-top: 60px;
 }
 
 .hero-content {
@@ -70,7 +72,7 @@ body {
 
 /* kondisi kursor ada diatas tombol akan berubah warna */
 .cta-buttons a:hover {
-    background-color: #4722be;
+    background-color: #3312a0;
     /* tombol naik 3 pixel keatas 
     misal translateY(3px) berati turun 3pixel
     traslateX(2px) berati geser kanan 2px */
@@ -79,7 +81,20 @@ body {
     /* 0 posisi x ngga digeser kekikri/kanan,
        5 posisi y digeser kebawah 5px,
        12[x seberapa blur bayanganya,
-       rgba itu warna bayangannya 0.2 itu transparasinya
-     */
+       rgba itu warna bayangannya 0.2 itu transparasinya */
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
+    /* lebar gambar ikut parent */
+    width: 100%;
+    /* tinggi gambar */
+    height: 400px;
+    /* ganti spacing bawaan img yg inline */
+    display: block;
+    border-radius: 12px;
+    /* cara masukin foto ke frame dgn gambar tetap proporsional dan area lebih dicrop */
+    object-fit: cover;
+    /* foto mau digeser kemana didalam frame */
+    object-position: center;
 }
