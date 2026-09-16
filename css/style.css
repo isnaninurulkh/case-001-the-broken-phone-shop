@@ -99,6 +99,84 @@ body {
     object-position: center;
 }
 
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f3b86;
+    text-decoration: none;
+}
+
+.navbar {
+    padding: 20px 0;
+}
+
+.menu-toggle {
+    display: none;
+    /* jadiin gua posisi patokan alias relatif */
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #111;
+    margin: 0;
+    transition: 0.3s;
+    /* posisi gue beradasarkan patokan si menu-toggle */
+    position: absolute;
+    left: 3px;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 7px;
+}
+.menu-toggle span:nth-child(2) {
+    top: 14px;
+}
+.menu-toggle span:nth-child(3) {
+    top: 21px;
+}
+
+/* kondisi kalo ada class active yg muncul jika menu hamburger diklik */
+/* ambil span pertama lalu putar 45derajat */
+.menu-toggle.active span:nth-child(1) {
+    top: 14px;
+    transform: rotate(45deg);
+}
+/* ambil span kedua lalu hilangin */
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+/* ambil span ketiga lalu putar -45derajat */
+.menu-toggle.active span:nth-child(3) {
+    top: 14px;
+    transform: rotate(-45deg);
+}
+
+
 /* kalo lebar layar maxnya 768px pake aturan iniya */
 @media (max-width: 768px) {
     .hero .container {
@@ -120,5 +198,25 @@ body {
 
     .cta-buttons {
         margin-top: 20px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* sembunyikan menu */
+    .nav-links {
+        gap: 20px;
+        display: none;
+    }
+
+    /* kalo diklik alias active tampilkan menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 }
