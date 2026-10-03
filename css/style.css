@@ -33,7 +33,7 @@ body {
     gap: 60px;
     /* sejajarkan anak ditengah */
     align-items: center;
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .hero-content {
@@ -99,7 +99,7 @@ body {
     object-position: center;
 }
 
-.navbar .container {
+.navbar-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,6 +124,7 @@ body {
 
 .navbar {
     padding: 20px 0;
+    position: relative;
 }
 
 .menu-toggle {
@@ -201,22 +202,38 @@ body {
     }
 
     .navbar .container {
-        flex-direction: column;
         gap: 20px;
     }
 
     /* sembunyikan menu */
     .nav-links {
-        gap: 20px;
         display: none;
     }
 
     /* kalo diklik alias active tampilkan menu */
     .nav-links.active {
         display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        background-color: gainsboro;
+        padding: 20px;
+        box-sizing: border-box;
+
+        margin-top: 10px;
+        /* flex-basis:100%; */
+        /* navlink nya minta satu baris penuh */
     }
 
     .menu-toggle {
         display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
